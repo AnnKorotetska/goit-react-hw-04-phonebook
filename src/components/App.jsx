@@ -14,14 +14,6 @@ export const App = () => {
     () => JSON.parse(window.localStorage.getItem(KEY)) ?? []
   );
 
-  useEffect(() => {
-    const contacts = JSON.parse(window.localStorage.getItem(KEY));
-
-    if (contacts) {
-      setContacts(contacts);
-    }
-  }, []);
-
   useEffect(
     () => window.localStorage.setItem(KEY, JSON.stringify(contacts)),
     [contacts]
